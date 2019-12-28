@@ -6,7 +6,7 @@ function returnIndex (moves,level){
 }
 console.log('kya bala');
 function playCorrespondingAudioAndAnimation(color){
-  var audio=new Audio('/sounds/'+color+'.mp3')
+  var audio=new Audio('sounds/'+color+'.mp3')
   audio.play();
   $('.'+color).addClass('pressed');
   setTimeout(function (){
@@ -19,7 +19,7 @@ function setLevelHeading(level){
 function fadeinfadeout(colorName){
     var colorClass='.'+colorName;
     $(colorClass).fadeOut(100).fadeIn(100);
-    var audio=new Audio('/sounds/'+colorName+'.mp3')
+    var audio=new Audio('sounds/'+colorName+'.mp3')
     audio.play();
 }
 //randomly generate a 50 color sequence
