@@ -6,7 +6,7 @@ function returnIndex (moves,level){
 }
 console.log('kya bala');
 function playCorrespondingAudioAndAnimation(color){
-  var audio=new Audio('sounds/'+color+'.mp3')
+  var audio=new Audio('/sounds/'+color+'.mp3')
   audio.play();
   $('.'+color).addClass('pressed');
   setTimeout(function (){
@@ -19,7 +19,7 @@ function setLevelHeading(level){
 function fadeinfadeout(colorName){
     var colorClass='.'+colorName;
     $(colorClass).fadeOut(100).fadeIn(100);
-    var audio=new Audio('sounds/'+colorName+'.mp3')
+    var audio=new Audio('/sounds/'+colorName+'.mp3')
     audio.play();
 }
 //randomly generate a 50 color sequence
@@ -83,7 +83,7 @@ function manager(colorClicked,gameLevel,level){
 $(document).on('keydown', function() {
     var level = 1;
     var mainSequence=generateSequence();
-    fadeinfadeout(mainSequence[0]);// to be replaced with fadeinfadeout
+    fadeinfadeout(mainSequence[0]);
     setLevelHeading(level);
   //  var sequence = generateSequence();
     $('.btn').on('click',function(event){
@@ -99,7 +99,7 @@ $(document).on('keydown', function() {
            level++;
            setLevelHeading(level);
            setTimeout(function d (){
-             fadeinfadeout(mainSequence[level-1]);//to be replaced with fadeinfadeout
+             fadeinfadeout(mainSequence[level-1]);
            },500);
 
          }
